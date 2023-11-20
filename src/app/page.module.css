@@ -1,0 +1,249 @@
+.banner {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 1em;
+}
+
+.bannerPhrase {
+  font-family: "Bungee", sans-serif;
+  width: 100%;
+  color: #464646;
+  font-size: 2.3vw;
+  text-align: center;
+  /* padding-top: 2em; */
+  /* margin-bottom: 1.3em; */
+}
+
+.slogan {
+  font-size: 5vh;
+  text-align: center;
+  padding: 10px;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.subMain {
+  display: grid;
+  place-content: center;
+}
+
+.Main02 {
+  min-height: 100vh;
+}
+
+.view01 {
+  width: 90%;
+  margin-bottom: 8vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-left: 5%;
+  font-family: "Source Sans 3", sans-serif;
+  gap: 2em;
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 40%;
+  animation-fill-mode: both;
+}
+
+.boxServices {
+  flex-basis: 200px;
+  flex-grow: 1;
+}
+
+.cardService {
+  border-radius: 1em;
+  background: #f4f3f3;
+  padding: 10px;
+  cursor: pointer;
+  grid-auto-rows: 6rem;
+}
+
+.cardService:hover {
+  background: #e7e7e7;
+}
+
+.cardDescription {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.headerCardmap {
+  width: 100%;
+  height: 10vh;
+  background-image: url("../assets/mapaBanner.jpg");
+  border-radius: 1em;
+}
+
+.headerCardebooks {
+  width: 100%;
+  height: 10vh;
+  background-image: url("../assets/ebooksCardBanner.jpg");
+  border-radius: 1em;
+}
+
+.headerCardbici {
+  width: 100%;
+  height: 10vh;
+  background-image: url("../assets/biciCardBanner2.jpg");
+  border-radius: 1em;
+}
+
+.headerCardolla {
+  width: 100%;
+  height: 10vh;
+  background-image: url("../assets/ollaCardBanner2.jpg");
+  border-radius: 1em;
+}
+
+.explorer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.boxIcon {
+  display: grid;
+  place-content: center;
+  padding-right: 5px;
+  transition: padding-right 0.3s; /* Agregamos una transición para suavizar el cambio */
+}
+
+.bannerEbookImg {
+  width: 90%;
+  margin-left: 5%;
+  height: auto;
+}
+
+.cardService:hover .boxIcon {
+  padding-right: 0px;
+}
+
+.MusicSeccion {
+  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 90%;
+  margin-left: 5%;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.infoMusicBtn {
+  flex-basis: 400px;
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+}
+
+.subInfoMusicBtn {
+  font-family: "Bungee", sans-serif;
+  cursor: pointer;
+  padding: 10px;
+  background: #f1f1f1;
+  border-radius: 1em;
+}
+
+.subInfoMusicBtn p {
+  font-size: 1.6vw;
+}
+
+.boxMusicInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.boxMusicInfo p {
+  display: grid;
+  place-content: center;
+}
+
+.noteIconBox {
+  display: grid;
+  place-content: center;
+}
+
+.mainInformation {
+  margin-top: 3em;
+  display: grid;
+  place-content: center;
+  justify-content: space-between;
+}
+
+.biografic {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.informationBox {
+  display: grid;
+  grid-auto-rows: 8rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 40px;
+}
+
+.infoCard {
+  flex-basis: 1000;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 2em;
+}
+
+.infoIcon {
+  display: grid;
+  place-content: center;
+}
+
+.textInfoCard {
+  text-align: center;
+  font-size: 1.3vw;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 600px) {
+}
+
+@media screen and (max-width: 767px) {
+
+  .bannerPhrase {
+    font-size: 5vw;
+  }
+
+  .subInfoMusicBtn p {
+    font-size: 4.5vw;
+  }
+
+  .textInfoCard {
+    font-size: 4vw;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+
