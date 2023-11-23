@@ -13,14 +13,16 @@ import Ebooks from "./pages/Ebooks";
 import Herramientas from "./pages/Herramientas";
 import Fotos from "./pages/Fotos";
 import { useMediaQuery } from "react-responsive";
+import SiderResponsive from "../slideBar/SliderResponsive";
 
 function DashboardComponent() {
   const { stateSidebar, setStateSidebar } = useSidebarContext();
-  const responsive = useMediaQuery({ query: "(max-width: 700px)" });
+  const options = ['Opción 1', 'Opción 2', 'Opción 3', 'Opción 4', 'Opción 5'];
+  const responsive = useMediaQuery({ query: "(max-width: 900px)" });
   return (
     <>
       <main className={styles.containerDash}>
-        {responsive ? null : <SideBar />}
+        {responsive ? <SiderResponsive />  : <SideBar /> }
         <div className={styles.contentContainer}>
           {stateSidebar == "blog" ? <Blog /> : null}
           {stateSidebar == "artistas" ? <Artistas /> : null}

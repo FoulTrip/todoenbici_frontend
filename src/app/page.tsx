@@ -11,6 +11,8 @@ import { useRouter } from "next/navigation";
 
 import AutoSliderLeft from "@/components/slider/autoSliderLeft";
 import AutoSliderRight from "@/components/slider/autoSliderRight";
+import pictureCEO from "@/assets/perfil_CEO.jpg";
+import Avatar from "react-avatar";
 
 function Home() {
   const router = useRouter();
@@ -24,6 +26,27 @@ function Home() {
           Pedaleando por el mundo y descubriendo la aventura en cada giro
         </h2>
         <AutoSliderRight />
+      </main>
+
+      <main className={styles.aboutMain}>
+        <div className={styles.boxImage}>
+          <Image className={styles.iconCEO} src={pictureCEO} alt="ceo" />
+        </div>
+        <div className={styles.ceo_info}>
+          <div className={styles.subceo_info}>
+            <h2>¿Quien Soy?</h2>
+            <p className={styles.textInfoCEO}>
+              ¡Hola aventureros! Soy Carlos Vasquez, un apasionado cicloviajero
+              colombiano en busca de experiencias únicas sobre dos ruedas. Mi
+              misión es demostrar que en bicicleta se puede llegar a cualquier
+              rincón, descubriendo la magia de cada lugar a un ritmo tranquilo.
+              Con mi pedalada, quiero inspirarte a explorar el mundo, conectarte
+              con la naturaleza y disfrutar de la libertad que solo una
+              bicicleta puede ofrecer. Únete a mi viaje y descubre la emoción de
+              explorar cada kilómetro con el viento como compañero.
+            </p>
+          </div>
+        </div>
       </main>
 
       <main className={styles.biografic}>

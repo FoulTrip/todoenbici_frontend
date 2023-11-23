@@ -5,13 +5,16 @@
   min-height: 100vh;
   width: 100%;
   padding-top: 1em;
+  /* background: #eaeaea; */
+  background: linear-gradient(to bottom, #eaeaea, #ffff);
 }
 
 .bannerPhrase {
-  font-family: "Bungee", sans-serif;
-  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  width: 90%;
+  margin-left: 5%;
   color: #464646;
-  font-size: 2.3vw;
+  font-size: 40px;
   text-align: center;
   /* padding-top: 2em; */
   /* margin-bottom: 1.3em; */
@@ -23,7 +26,7 @@
   padding: 10px;
   margin-top: 3em;
   margin-bottom: 1em;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .subMain {
@@ -42,7 +45,7 @@
   flex-wrap: wrap;
   width: 90%;
   margin-left: 5%;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Poppins', sans-serif;
   gap: 2em;
   view-timeline-name: --image;
   view-timeline-axis: block;
@@ -136,7 +139,7 @@
   gap: 1em;
   width: 90%;
   margin-left: 5%;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .infoMusicBtn {
@@ -147,7 +150,7 @@
 }
 
 .subInfoMusicBtn {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Poppins', sans-serif;
   cursor: pointer;
   padding: 10px;
   background: #f1f1f1;
@@ -188,7 +191,7 @@
 
 .informationBox {
   display: grid;
-  grid-auto-rows: 8rem;
+  /* grid-auto-rows: 8rem; */
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 40px;
 }
@@ -210,19 +213,15 @@
 .textInfoCard {
   text-align: center;
   font-size: 1.3vw;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media screen and (min-width: 1024px) {
 }
 
-@media screen and (min-width: 600px) {
-}
-
-@media screen and (max-width: 767px) {
-
+@media screen and (max-width: 900px) {
   .bannerPhrase {
-    font-size: 5vw;
+    font-size: 23px;
   }
 
   .subInfoMusicBtn p {
@@ -246,4 +245,63 @@
   }
 }
 
+.aboutMain {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  min-height: 100vh;
+  margin-left: 5%;
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 25% cover 40%;
+  animation-fill-mode: both;
+  justify-content: space-between;
+}
 
+.boxImage {
+  flex-basis: 400px;
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+}
+
+.subceo_info h2 {
+  margin-bottom: 1em;
+}
+
+.iconCEO {
+  width: 90%;
+  height: auto;
+}
+
+.ceo_info {
+  flex-basis: 400px;
+  flex-grow: 1;
+  display: grid;
+  place-content: center;
+}
+
+.textInfoCEO {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 800px) {
+  .boxImage {
+    display: grid;
+    place-content: end;
+  }
+
+  .ceo_info {
+    display: grid;
+    place-content: start;
+    margin-top: 2em;
+  }
+
+  .iconCEO {
+    width: 100%;
+    height: auto;
+  }
+}

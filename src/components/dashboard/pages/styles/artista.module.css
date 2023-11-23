@@ -80,6 +80,10 @@
   .nameAlbum {
     font-size: 5vw;
   }
+
+  .titleMusic {
+    margin-top: 4em;
+  }
 }
 
 /* Open Music */
@@ -157,4 +161,8 @@
 
 .arrowIcon {
   color: #fff;
+}
+
+@media screen and (max-width: 900px) {
+  
 }
