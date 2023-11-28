@@ -1,5 +1,5 @@
 FROM node:18-alpine as deps
-RUN apk add --no-cache libc6-compatcls
+# RUN apk add --no-cache libc6-compatcls
 
 WORKDIR /app
 COPY package*.json ./
