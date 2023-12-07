@@ -6,12 +6,6 @@ import styles from "./maps.module.css";
 
 import { positions } from "./positions";
 
-const citys = [
-  {
-    lat: 3.3425625,
-  },
-];
-
 interface mapProps {
   lat: number;
   lng: number;
