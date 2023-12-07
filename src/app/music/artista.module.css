@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
+  margin-top: 5em;
   /* background: linear-gradient(to bottom, #c3f1ef, #D1F6F1); */
 }
 
@@ -52,7 +53,8 @@
   display: grid;
   place-content: center;
   color: #fff;
-  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
 }
 
 .btnListen {
@@ -77,9 +79,9 @@
 }
 
 @media screen and (max-width: 800px) {
-  .nameAlbum {
+  /* .nameAlbum {
     font-size: 5vw;
-  }
+  } */
 
   .titleMusic {
     margin-top: 4em;
@@ -116,7 +118,7 @@
 }
 
 .titleArtist {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 20px;
 }
@@ -129,6 +131,7 @@
 
 .txtInfoNumbr {
   font-weight: 300;
+  font-family: "Poppins", sans-serif;
 }
 
 .imgBoxAlbum {
@@ -149,6 +152,7 @@
   background: #232323;
   border-radius: 1em;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
 .subBtnSpotify p {
@@ -163,6 +167,22 @@
   color: #fff;
 }
 
+.backBtn {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: start;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.subBackBtn {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
-  
+  .backBtn {
+    margin-top: 2em;
+  }
 }

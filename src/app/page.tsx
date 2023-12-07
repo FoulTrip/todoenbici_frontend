@@ -7,12 +7,25 @@ import Image from "next/image";
 
 import { SiYourtraveldottv, SiJusteat } from "react-icons/si";
 import { BsArrowRightShort, BsBicycle } from "react-icons/bs";
+import {
+  FaYoutube,
+  FaFacebook,
+  FaInstagram,
+  FaTiktok,
+  FaRoad,
+} from "react-icons/fa";
+import { BiSolidHomeHeart } from "react-icons/bi";
 import { useRouter } from "next/navigation";
 
 import AutoSliderLeft from "@/components/slider/autoSliderLeft";
 import AutoSliderRight from "@/components/slider/autoSliderRight";
 import pictureCEO from "@/assets/perfil_CEO.jpg";
 import Avatar from "react-avatar";
+import Footer from "@/components/footer/Footer";
+import AutoSliderSponsor from "@/components/slider/sponsors";
+
+import animateMarkerGps from "@/assets/marcadores/distancia.gif"
+import MarkerGps from "@/assets/marcadores/distancia.png"
 
 function Home() {
   const router = useRouter();
@@ -22,10 +35,45 @@ function Home() {
 
       <main className={styles.banner}>
         <AutoSliderLeft />
-        <h2 className={styles.bannerPhrase}>
-          Pedaleando por el mundo y descubriendo la aventura en cada giro
-        </h2>
+        <h2 className={styles.bannerPhrase}>VUELTA AL MUNDO EN CARGOBIKE</h2>
         <AutoSliderRight />
+      </main>
+
+      <main className={styles.biografic}>
+        <section className={styles.informationBox}>
+          <div className={styles.infoCard}>
+            <div className={styles.infoIcon}>
+              <FaRoad size={70} />
+            </div>
+            <p className={styles.textInfoCard}>10.000 km recorridos </p>
+          </div>
+          <div className={styles.infoCard}>
+            <div className={styles.infoIcon}>
+              <SiYourtraveldottv size={70} />
+            </div>
+            <p className={styles.textInfoCard}>3 paises recorridos</p>
+          </div>
+          <div className={styles.infoCard}>
+            <div className={styles.infoIcon}>
+              <SiJusteat size={70} />
+            </div>
+            <p className={styles.textInfoCard}>30 ollas comunitarias</p>
+          </div>
+          <div className={styles.infoCard}>
+            <div className={styles.infoIcon}>
+              <BsBicycle size={70} />
+            </div>
+            <p className={styles.textInfoCard}>60 millones de padaleadas</p>
+          </div>
+          <div className={styles.infoCard}>
+            <div className={styles.infoIcon}>
+              <BiSolidHomeHeart size={70} />
+            </div>
+            <p className={styles.textInfoCard}>3 casas cicloviajeras</p>
+          </div>
+        </section>
+
+        <div></div>
       </main>
 
       <main className={styles.aboutMain}>
@@ -45,45 +93,21 @@ function Home() {
               bicicleta puede ofrecer. Únete a mi viaje y descubre la emoción de
               explorar cada kilómetro con el viento como compañero.
             </p>
+            <div className={styles.redBox}>
+              <div className={styles.subRedBox}>
+                <p>Redes</p>
+                <div className={styles.pasarellIconss}>
+                  <div className={styles.centerIcons}>
+                    <FaYoutube size={25} className={styles.iconYoutube} />
+                    <FaFacebook size={25} className={styles.iconFacebook} />
+                    <FaInstagram size={25} className={styles.iconInstagram} />
+                    <FaTiktok size={25} className={styles.iconTiktok} />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </main>
-
-      <main className={styles.biografic}>
-        <section className={styles.informationBox}>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <BsBicycle size={70} />
-            </div>
-            <p className={styles.textInfoCard}>10.000 km recorridos </p>
-          </div>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <SiYourtraveldottv size={70} />
-            </div>
-            <p className={styles.textInfoCard}>3 paises recorridos</p>
-          </div>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <SiJusteat size={70} />
-            </div>
-            <p className={styles.textInfoCard}>30 ollas comunitarias</p>
-          </div>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <SiJusteat size={70} />
-            </div>
-            <p className={styles.textInfoCard}>30 ollas comunitarias</p>
-          </div>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <SiJusteat size={70} />
-            </div>
-            <p className={styles.textInfoCard}>30 ollas comunitarias</p>
-          </div>
-        </section>
-
-        <div></div>
       </main>
 
       <main className={styles.Main02}>
@@ -102,7 +126,7 @@ function Home() {
                 carreteras de mi país? descubre lo mejor del camino
               </p>
               <div className={styles.explorer}>
-                <p>Rutas y viajes</p>
+                <p>Ruta</p>
                 <div className={styles.boxIcon}>
                   <BsArrowRightShort />
                 </div>
@@ -118,7 +142,7 @@ function Home() {
                 de nuestras piezas premium para bicicletas.
               </div>
               <div className={styles.explorer}>
-                <p>Partes de mi bici</p>
+                <p>Tienda</p>
                 <div className={styles.boxIcon}>
                   <BsArrowRightShort />
                 </div>
@@ -151,19 +175,73 @@ function Home() {
             <div className={styles.cardService}>
               <div className={styles.headerCardolla}></div>
               <div className={styles.cardDescription}>
-                ¡Eleva tu aventura en dos ruedas al máximo! Descubre la potencia
-                de nuestras piezas premium para bicicletas.
+                Estas viajando en tu bicicleta y no sabes donde puedes
+                hospedarte con la seguridad y el mejor acompañamiento posible?
               </div>
               <div className={styles.explorer}>
-                <p>Ollas comunitarias</p>
+                <p>Gastronomia</p>
                 <div className={styles.boxIcon}>
                   <BsArrowRightShort />
                 </div>
               </div>
             </div>
           </div>
+
+          <div className={styles.boxServices}>
+            <div className={styles.cardService}>
+              <div className={styles.headerCardolla}></div>
+              <div className={styles.cardDescription}>
+                Estas viajando en tu bicicleta y no sabes donde puedes
+                hospedarte con la seguridad y el mejor acompañamiento posible?
+              </div>
+              <div className={styles.explorer}>
+                <p>Compra una Cargo</p>
+                <div className={styles.boxIcon}>
+                  <BsArrowRightShort />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.boxServices}>
+            <div className={styles.cardService}>
+              <div className={styles.headerCardolla}></div>
+              <div className={styles.cardDescription}>
+                Estas viajando en tu bicicleta y no sabes donde puedes
+                hospedarte con la seguridad y el mejor acompañamiento posible?
+              </div>
+              <div className={styles.explorer}>
+                <p>Desarrollo de software</p>
+                <div className={styles.boxIcon}>
+                  <BsArrowRightShort />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.boxServices}>
+            <div className={styles.cardService}>
+              <div className={styles.headerCardolla}></div>
+              <div className={styles.cardDescription}>
+                Estas viajando en tu bicicleta y no sabes donde puedes
+                hospedarte con la seguridad y el mejor acompañamiento posible?
+              </div>
+              <div className={styles.explorer}>
+                <p>Veterinaria</p>
+                <div className={styles.boxIcon}>
+                  <BsArrowRightShort />
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <p className={styles.textPatro}>Patrocinadores</p>
+        <AutoSliderSponsor />
       </main>
+
+      <Footer />
     </>
   );
 }

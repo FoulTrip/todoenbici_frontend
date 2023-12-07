@@ -2,17 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { MusicData, Song } from "../types";
-import styles from "./styles/artista.module.css";
+import { MusicData } from "@/app/music/types";
+import styles from "./artista.module.css";
 import Image from "next/image";
 
 import { GrSpotify } from "react-icons/gr";
 import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import MusicPlayer from "@/components/music/reproductor";
+import Navbar from "@/components/navBars/NavBar";
 
-function Artistas() {
+function Music() {
   const [musicData, setMusicData] = useState<MusicData | null>(null);
-  const [openAlbum, setOpenAlbum] = useState(false);
+  //   const [openAlbum, setOpenAlbum] = useState(false);
   const [selectArt, setSelectArt] = useState(0);
 
   useEffect(() => {
@@ -30,11 +31,9 @@ function Artistas() {
 
   return (
     <>
+      <Navbar />
       <main className={styles.ArtistContainer}>
-        <h1 className={styles.titleMusic}>
-          Disfruta las canciones de estos talentosos cantantes mientras viajas
-        </h1>
-
+        <h1 className={styles.titleMusic}>La vida sin música sería un error</h1>
         {selectArt == 0 ? (
           <div className={styles.boxArtists}>
             {musicData?.artista.map((artista) => (
@@ -59,7 +58,10 @@ function Artistas() {
 
         {selectArt != 0 ? (
           <div className={styles.backBtn}>
-            <IoIosArrowRoundBack onClick={() => setSelectArt(0)} />
+            <div className={styles.subBackBtn} onClick={() => setSelectArt(0)}>
+              <IoIosArrowRoundBack />
+              <p>Volver</p>
+            </div>
           </div>
         ) : null}
 
@@ -162,4 +164,4 @@ function Artistas() {
   );
 }
 
-export default Artistas;
+export default Music;

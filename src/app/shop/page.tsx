@@ -1,9 +1,18 @@
-import React from 'react'
+import ProductsCard from "@/components/cards/productsCard";
+import Navbar from "@/components/navBars/NavBar";
+import React from "react";
+import styles from "./styles.module.css"
 
 function Shop() {
   return (
-    <div>Shop</div>
-  )
+    <>
+      <Navbar />
+      <main>
+        <div className={styles.searchBox}></div>
+        <ProductsCard />
+      </main>
+    </>
+  );
 }
 
-export default Shop
+export default Shop;

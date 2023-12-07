@@ -14,7 +14,7 @@
   width: 90%;
   margin-left: 5%;
   color: #464646;
-  font-size: 40px;
+  font-size: 60px;
   text-align: center;
   /* padding-top: 2em; */
   /* margin-bottom: 1.3em; */
@@ -38,11 +38,16 @@
   min-height: 100vh;
 }
 
+.iconMarker {
+  width: 100%;
+  height: auto;
+}
+
 .view01 {
   width: 90%;
   margin-bottom: 8vh;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   width: 90%;
   margin-left: 5%;
   font-family: 'Poppins', sans-serif;
@@ -287,6 +292,73 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
+
+.subRedBox {
+  padding-top: 15px;
+}
+
+.subRedBox p {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 15px;
+}
+
+.pasarellIconss {
+  display: grid;
+  place-content: center;
+}
+
+.centerIcons {
+  display: flex;
+  gap: 20px;
+}
+
+.iconYoutube {
+  color: #939393;
+  cursor: pointer;
+}
+
+.iconYoutube:hover {
+  color: red;
+  scale: 1.03;
+}
+
+.iconFacebook {
+  color: #939393;
+  cursor: pointer;
+}
+
+.iconFacebook:hover {
+  color: #6565ff;
+  scale: 1.03;
+}
+
+.iconInstagram {
+  color: #939393;
+  cursor: pointer;
+}
+
+.iconInstagram:hover {
+  color: #cc6a6a;
+}
+
+.iconTiktok {
+  color: #939393;
+  cursor: pointer;
+}
+
+.iconTiktok:hover {
+  color: #000;
+}
+
+.textPatro {
+  width: 100%;
+  text-align: center;
+  margin-top: 3em;
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 @media screen and (max-width: 800px) {
   .boxImage {

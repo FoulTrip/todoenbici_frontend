@@ -1,9 +1,0 @@
-.containerDash {
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-
-.contentContainer {
-  display: flex;
-  flex-grow: 1;
-}
