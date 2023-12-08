@@ -2,15 +2,15 @@ import React from "react";
 import styles from "./autoSliderRight.module.css";
 import Image from "next/image";
 
-import img00 from "@/assets/principalBanner/00.jpg";
-import img01 from "@/assets/principalBanner/01.jpg";
-import img02 from "@/assets/principalBanner/02.jpg";
-import img03 from "@/assets/principalBanner/03.jpg";
-import img04 from "@/assets/principalBanner/04.jpg";
-import img05 from "@/assets/principalBanner/05.jpg";
-import img06 from "@/assets/principalBanner/06.jpg";
-import img07 from "@/assets/principalBanner/07.jpg";
-import img08 from "@/assets/principalBanner/08.jpg";
+import img00 from "@/assets/principalBanner/00.jpeg";
+import img01 from "@/assets/principalBanner/01.jpeg";
+import img02 from "@/assets/principalBanner/02.jpeg";
+import img03 from "@/assets/principalBanner/03.jpeg";
+import img04 from "@/assets/principalBanner/04.jpeg";
+import img05 from "@/assets/principalBanner/05.jpeg";
+import img06 from "@/assets/principalBanner/06.jpeg";
+import img07 from "@/assets/principalBanner/07.jpeg";
+import img08 from "@/assets/principalBanner/08.jpeg";
 
 function AutoSliderLeft() {
   return (

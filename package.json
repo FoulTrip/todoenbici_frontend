@@ -23,7 +23,8 @@
     "react-responsive": "^9.0.2",
     "react-slick": "^0.29.0",
     "react-swipeable": "^7.0.1",
-    "sharp": "^0.32.6"
+    "sharp": "^0.32.6",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/google-map-react": "^2.1.10",

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/navBars/NavBar";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -13,7 +13,9 @@ import {
   FaInstagram,
   FaTiktok,
   FaRoad,
+  FaHandsHelping,
 } from "react-icons/fa";
+import { FaCity } from "react-icons/fa6";
 import { BiSolidHomeHeart } from "react-icons/bi";
 import { useRouter } from "next/navigation";
 
@@ -23,19 +25,42 @@ import pictureCEO from "@/assets/perfil_CEO.jpg";
 import Avatar from "react-avatar";
 import Footer from "@/components/footer/Footer";
 import AutoSliderSponsor from "@/components/slider/sponsors";
+import Typewriter from "typewriter-effect";
 
-import animateMarkerGps from "@/assets/marcadores/distancia.gif"
-import MarkerGps from "@/assets/marcadores/distancia.png"
+import animateMarkerGps from "@/assets/marcadores/distancia.gif";
+import MarkerGps from "@/assets/marcadores/distancia.png";
 
 function Home() {
   const router = useRouter();
+  const [textState, setTextState] = useState(false);
   return (
     <>
       <Navbar />
 
       <main className={styles.banner}>
         <AutoSliderLeft />
-        <h2 className={styles.bannerPhrase}>VUELTA AL MUNDO EN CARGOBIKE</h2>
+        {textState == false ? (
+          <h2 className={styles.bannerPhrase}>
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString("VUELTA AL MUNDO EN CARGOBIKE")
+                  .pauseFor(2000)
+                  .callFunction(() => {
+                    setTextState(true);
+                  })
+                  .start();
+              }}
+            />
+          </h2>
+        ) : (
+          <div className={styles.barBtnYoutube}>
+            <div className={styles.realBtnYtb}>
+              <FaYoutube />
+              <p>Pedalea conmigo</p>
+            </div>
+          </div>
+        )}
         <AutoSliderRight />
       </main>
 
@@ -49,21 +74,21 @@ function Home() {
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <SiYourtraveldottv size={70} />
+              <FaCity size={70} />
             </div>
             <p className={styles.textInfoCard}>3 paises recorridos</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <SiJusteat size={70} />
+              <FaHandsHelping size={70} />
             </div>
-            <p className={styles.textInfoCard}>30 ollas comunitarias</p>
+            <p className={styles.textInfoCard}>67 puntos de apoyo</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
               <BsBicycle size={70} />
             </div>
-            <p className={styles.textInfoCard}>60 millones de padaleadas</p>
+            <p className={styles.textInfoCard}>8 millones de pedaleadas</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
@@ -234,7 +259,6 @@ function Home() {
               </div>
             </div>
           </div>
-
         </div>
 
         <p className={styles.textPatro}>Patrocinadores</p>

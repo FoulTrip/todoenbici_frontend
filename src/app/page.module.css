@@ -16,6 +16,7 @@
   color: #464646;
   font-size: 60px;
   text-align: center;
+  padding: 10px;
   /* padding-top: 2em; */
   /* margin-bottom: 1.3em; */
 }
@@ -359,6 +360,33 @@
   font-family: 'Poppins', sans-serif;
 }
 
+.barBtnYoutube {
+  display: grid;
+  place-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.realBtnYtb {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background: red;
+  padding: 10px;
+  border-radius: 1em;
+  cursor: pointer;
+  color: #fff;
+}
+
+.realBtnYtb:hover {
+  scale: 1.03;
+}
+
+.realBtnYtb p {
+  font-weight: 200;
+  font-size: ;
+}
 
 @media screen and (max-width: 800px) {
   .boxImage {
