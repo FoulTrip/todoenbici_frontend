@@ -3,14 +3,14 @@ import styles from "./sponsor.module.css";
 import Image from "next/image";
 
 import img00 from "@/assets/tripcode_logo.png";
-import img01 from "@/assets/tripcode_logo.png";
-import img02 from "@/assets/tripcode_logo.png";
+import img01 from "@/assets/oscargo_logo.png";
+import img02 from "@/assets/juliaca_logo.png";
 import img03 from "@/assets/tripcode_logo.png";
-import img04 from "@/assets/tripcode_logo.png";
-import img05 from "@/assets/tripcode_logo.png";
+import img04 from "@/assets/oscargo_logo.png";
+import img05 from "@/assets/juliaca_logo.png";
 import img06 from "@/assets/tripcode_logo.png";
-import img07 from "@/assets/tripcode_logo.png";
-import img08 from "@/assets/tripcode_logo.png";
+import img07 from "@/assets/oscargo_logo.png";
+import img08 from "@/assets/juliaca_logo.png";
 
 function AutoSliderSponsor() {
   return (

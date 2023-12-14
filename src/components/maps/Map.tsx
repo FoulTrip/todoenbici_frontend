@@ -1,21 +1,22 @@
-"use client";
-
 import { Loader } from "@googlemaps/js-api-loader";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./maps.module.css";
 
-import { positions } from "./positions";
-
-interface mapProps {
-  lat: number;
-  lng: number;
+interface Coordinates {
+  latitude: number;
+  longitude: number;
 }
 
-function MapComponent({ lat, lng }: mapProps) {
+interface mapProps {
+  cordinates: Coordinates[];
+}
+
+function MapComponent({ cordinates }: mapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const initMap = async () => {
+    async function initMap() {
       try {
         const loader = new Loader({
           apiKey: process.env.NEXT_PUBLIC_GOOGLE_KEY as string,
@@ -23,53 +24,68 @@ function MapComponent({ lat, lng }: mapProps) {
         });
 
         const { Map } = await loader.importLibrary("maps");
+        const { Marker } = await loader.importLibrary("marker");
 
-        // Init a Marker
-        const { Marker } = await loader.importLibrary(
-          "marker"
-        ); /*{as google.maps.MarkerLibrary;}*/
-
-        const externPositions = {
-          latitude: lat,
-          longitude: lng,
-        };
-
-        const mapOption: google.maps.MapOptions = {
-          zoom: 6,
-          //   mapId: "MY_NEXTJS_MAPID",
-        };
-
-        const map = new Map(mapRef.current as HTMLDivElement, {
-          center: positions.colombia.bogota,
-          disableDefaultUI: true,
-          ...mapOption,
-        });
-
-        for (let city in positions.colombia) {
-          let position =
-            positions.colombia[city as keyof typeof positions.colombia];
-          let marker = new google.maps.Marker({
-            position: new google.maps.LatLng(position.lat, position.lng),
-            map: map,
-            title: city,
-          });
+        if (!Map) {
+          console.error("Error al cargar el mapa");
+          return;
         }
 
-        const marker = new Marker({
-          map: map,
-          position: positions.colombia.bogota,
+        const map = new Map(mapRef.current as HTMLDivElement, {
+          center: {
+            lat: 3.4516,
+            lng: -76.532,
+          },
+          disableDefaultUI: true,
+          zoom: 6,
         });
+
+        cordinates.forEach((coordinate) => {
+          if (
+            coordinate.latitude !== undefined &&
+            coordinate.longitude !== undefined
+          ) {
+            new Marker({
+              position: new google.maps.LatLng(
+                coordinate.latitude,
+                coordinate.longitude
+              ),
+              map: map,
+            });
+          } else {
+            console.error("Coordenadas inválidas:", coordinate);
+          }
+        });
+
+        setLoading(false); // Set loading to false after map is initialized
       } catch (error) {
         console.error("Error al cargar el mapa:", error);
       }
-    };
+    }
 
-    initMap();
+    const firstCoordinate = cordinates[0];
+
+    if (
+      cordinates.length > 0 &&
+      firstCoordinate &&
+      firstCoordinate.latitude &&
+      firstCoordinate.longitude
+    ) {
+      if (!window.google || !window.google.maps) {
+        initMap();
+      }
+    } else {
+      console.warn("No hay coordenadas para mostrar en el mapa.");
+    }
   }, []);
 
   return (
     <>
-      <div className={styles.mapContainer} ref={mapRef} />
+      {loading ? (
+        <div>Loading...</div> // Show a loading message while the map is being initialized
+      ) : (
+        <div className={styles.mapContainer} ref={mapRef} />
+      )}
     </>
   );
 }

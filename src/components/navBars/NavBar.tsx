@@ -7,7 +7,9 @@ import { useMediaQuery } from "react-responsive";
 
 import iconLogo from "@/assets/logo_page.png";
 import { AiOutlineMenu, AiFillHome } from "react-icons/ai";
-import { IoMdCloseCircle } from "react-icons/io";
+import { IoMdCloseCircle, IoIosMusicalNotes } from "react-icons/io";
+import { FaMap } from "react-icons/fa";
+import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -37,11 +39,11 @@ function Navbar() {
         </div>
         {responsive ? (
           <div className={styles.account}>
-            <div className={styles.subAccount}>
+            {/* <div className={styles.subAccount}>
               <Link href="/blog" className={styles.login}>
                 Blog
               </Link>
-            </div>
+            </div> */}
             <div className={styles.subAccount}>
               <Link href="/music" className={styles.login}>
                 Musica
@@ -73,30 +75,23 @@ function Navbar() {
                   </div>
                 </li>
 
-                <li className={styles.dropdown_list} onClick={() => router.push("/blog")}>
-                  <div className={styles.dropdown_link}>
-                    <AiFillHome />
-                    <span className={styles.dropdown_span}>Blog</span>
-                  </div>
-                </li>
-
                 <li className={styles.dropdown_list} onClick={() => router.push("/music")}>
                   <div className={styles.dropdown_link}>
-                    <AiFillHome />
+                    <IoIosMusicalNotes />
                     <span className={styles.dropdown_span}>Musica</span>
                   </div>
                 </li>
 
                 <li className={styles.dropdown_list} onClick={() => router.push("/shop")}>
                   <div className={styles.dropdown_link}>
-                    <AiFillHome />
+                    <MdOutlineLocalGroceryStore />
                     <span className={styles.dropdown_span}>Tienda</span>
                   </div>
                 </li>
 
                 <li className={styles.dropdown_list} onClick={() => router.push("/ruta")}>
                   <div className={styles.dropdown_link}>
-                    <AiFillHome />
+                    <FaMap />
                     <span className={styles.dropdown_span}>Ruta</span>
                   </div>
                 </li>

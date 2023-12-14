@@ -1,13 +1,10 @@
-import { NextResponse } from "next/server"
+import { NextResponse } from "next/server";
+import JsonLocation from "@/components/jsons/locations_bici.json";
 
-interface cordenates {
-    longitude: number,
-    latitude: number
-}
-
-export async function POST(request: Request) {
-    const {longitude, latitude}: cordenates = await request.json()
-    const log = longitude
-    const lat = latitude
-    return NextResponse.json(`Longitud: ${log}, Latitud: ${lat}`)
+export async function GET() {
+  try {
+    return NextResponse.json(JsonLocation);
+  } catch (error) {
+    return NextResponse.json("error when obtaining data");
+  }
 }

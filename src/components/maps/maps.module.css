@@ -1,7 +1,5 @@
 .mapContainer {
     border-radius: 1em;
-    width: 100%;
-    min-height: 100%;
-    display: grid;
-    place-content: center;
+    min-width: 100%;
+    position: relative;
 }

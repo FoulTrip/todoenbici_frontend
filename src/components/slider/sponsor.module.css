@@ -14,9 +14,9 @@
   animation: scroll 40s linear infinite;
 }
 
-/* .slide_track:hover {
+.img, .slide_track:hover {
       animation-play-state: paused;
-  } */
+  }
 
 @keyframes scroll {
   0% {
@@ -36,7 +36,7 @@
 }
 
 .img {
-  width: 100%;
+  width: 350px;
   height: auto;
   transition: transform 1s;
   border-radius: 1em;

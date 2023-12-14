@@ -22,13 +22,9 @@ import { useRouter } from "next/navigation";
 import AutoSliderLeft from "@/components/slider/autoSliderLeft";
 import AutoSliderRight from "@/components/slider/autoSliderRight";
 import pictureCEO from "@/assets/perfil_CEO.jpg";
-import Avatar from "react-avatar";
 import Footer from "@/components/footer/Footer";
 import AutoSliderSponsor from "@/components/slider/sponsors";
 import Typewriter from "typewriter-effect";
-
-import animateMarkerGps from "@/assets/marcadores/distancia.gif";
-import MarkerGps from "@/assets/marcadores/distancia.png";
 
 function Home() {
   const router = useRouter();
@@ -55,7 +51,12 @@ function Home() {
           </h2>
         ) : (
           <div className={styles.barBtnYoutube}>
-            <div className={styles.realBtnYtb}>
+            <div
+              className={styles.realBtnYtb}
+              onClick={() =>
+                router.push("https://www.youtube.com/@TodoenBicicleta")
+              }
+            >
               <FaYoutube />
               <p>Pedalea conmigo</p>
             </div>
@@ -68,31 +69,31 @@ function Home() {
         <section className={styles.informationBox}>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <FaRoad size={70} />
+              <FaRoad className={styles.iconRoad} size={70} />
             </div>
             <p className={styles.textInfoCard}>10.000 km recorridos </p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <FaCity size={70} />
+              <FaCity className={styles.iconCity} size={70} />
             </div>
             <p className={styles.textInfoCard}>3 paises recorridos</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <FaHandsHelping size={70} />
+              <FaHandsHelping className={styles.iconHelping} size={70} />
             </div>
             <p className={styles.textInfoCard}>67 puntos de apoyo</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <BsBicycle size={70} />
+              <BsBicycle className={styles.iconBicycle} size={70} />
             </div>
             <p className={styles.textInfoCard}>8 millones de pedaleadas</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <BiSolidHomeHeart size={70} />
+              <BiSolidHomeHeart className={styles.iconHomeHeart} size={70} />
             </div>
             <p className={styles.textInfoCard}>3 casas cicloviajeras</p>
           </div>
@@ -123,10 +124,38 @@ function Home() {
                 <p>Redes</p>
                 <div className={styles.pasarellIconss}>
                   <div className={styles.centerIcons}>
-                    <FaYoutube size={25} className={styles.iconYoutube} />
-                    <FaFacebook size={25} className={styles.iconFacebook} />
-                    <FaInstagram size={25} className={styles.iconInstagram} />
-                    <FaTiktok size={25} className={styles.iconTiktok} />
+                    <FaYoutube
+                      onClick={() =>
+                        router.push("https://www.youtube.com/@TodoenBicicleta")
+                      }
+                      size={25}
+                      className={styles.iconYoutube}
+                    />
+                    <FaFacebook
+                      size={25}
+                      onClick={() =>
+                        router.push(
+                          "https://www.facebook.com/todoenbicicletacolombia"
+                        )
+                      }
+                      className={styles.iconFacebook}
+                    />
+                    <FaInstagram
+                      size={25}
+                      onClick={() =>
+                        router.push("https://www.instagram.com/Todoenbicicleta")
+                      }
+                      className={styles.iconInstagram}
+                    />
+                    <FaTiktok
+                      size={25}
+                      onClick={() =>
+                        router.push(
+                          "https://www.tiktok.com/@todo.enbicicleta?fbclid=IwAR3-k2G7QUT_ECgyOKXrtgbjl7eVZT8yPutgUgPV8JKchvp8t2p6nYgOCjs"
+                        )
+                      }
+                      className={styles.iconTiktok}
+                    />
                   </div>
                 </div>
               </div>

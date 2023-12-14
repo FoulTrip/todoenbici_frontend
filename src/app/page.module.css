@@ -14,9 +14,9 @@
   width: 90%;
   margin-left: 5%;
   color: #464646;
-  font-size: 60px;
+  font-size: 50px;
   text-align: center;
-  padding: 10px;
+  /* padding: 10px; */
   /* padding-top: 2em; */
   /* margin-bottom: 1.3em; */
 }
@@ -59,7 +59,7 @@
   animation-timeline: --image;
   animation-name: show;
 
-  animation-range: entry 25% cover 40%;
+  animation-range: entry 20% cover 50%;
   animation-fill-mode: both;
 }
 
@@ -261,7 +261,7 @@
   view-timeline-axis: block;
   animation-timeline: --image;
   animation-name: show;
-  animation-range: entry 25% cover 40%;
+  animation-range: entry 20% cover 50%;
   animation-fill-mode: both;
   justify-content: space-between;
 }
@@ -365,7 +365,7 @@
   place-content: center;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .realBtnYtb {
