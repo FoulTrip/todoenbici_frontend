@@ -274,7 +274,7 @@ function Home() {
         <p className={styles.textPatro}>Patrocinadores</p>
         <AutoSliderSponsor />
       </main>
-
+      
       <Footer />
     </>
   );
