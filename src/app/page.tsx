@@ -26,6 +26,17 @@ import Footer from "@/components/footer/Footer";
 import AutoSliderSponsor from "@/components/slider/sponsors";
 import Typewriter from "typewriter-effect";
 
+import banner01 from "@/assets/services_img/banner01.jpg";
+import banner02 from "@/assets/services_img/banner02.jpg";
+import banner03 from "@/assets/services_img/banner03.jpg";
+import banner04 from "@/assets/services_img/banner04.jpg";
+import banner05 from "@/assets/services_img/banner05.jpg";
+import banner06 from "@/assets/services_img/banner06.jpg";
+import banner07 from "@/assets/services_img/banner07.jpg";
+import banner08 from "@/assets/services_img/banner08.jpg";
+import banner09 from "@/assets/services_img/banner09.jpg";
+import banner10 from "@/assets/services_img/banner10.jpg";
+
 function Home() {
   const router = useRouter();
   const [textState, setTextState] = useState(false);
@@ -57,7 +68,9 @@ function Home() {
                 router.push("https://www.youtube.com/@TodoenBicicleta")
               }
             >
-              <FaYoutube />
+              <div className={styles.realBtnIconBox}>
+                <FaYoutube />
+              </div>
               <p>Pedalea conmigo</p>
             </div>
           </div>
@@ -167,126 +180,94 @@ function Home() {
       <main className={styles.Main02}>
         <h2 className={styles.slogan}>Descubre y Disfruta</h2>
         <div className={styles.view01}>
-          <div className={styles.boxServices}>
-            <div
-              className={styles.cardService}
-              onClick={() => {
-                router.push("/dashboard");
-              }}
-            >
-              <div className={styles.headerCardmap}></div>
-              <p className={styles.cardDescription}>
-                ¿Te fascinaría conocer los mejores restaurantes en las
-                carreteras de mi país? descubre lo mejor del camino
-              </p>
-              <div className={styles.explorer}>
-                <p>Ruta</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.boxServices}>
-            <div className={styles.cardService}>
-              <div className={styles.headerCardbici}></div>
-              <div className={styles.cardDescription}>
-                ¡Eleva tu aventura en dos ruedas al máximo! Descubre la potencia
-                de nuestras piezas premium para bicicletas.
-              </div>
-              <div className={styles.explorer}>
-                <p>Tienda</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/shop");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner01} alt="bn1" />
           </div>
 
           <div
             className={styles.boxServices}
             onClick={() => {
-              router.push("/dashboard");
+              router.push("/ruta");
             }}
           >
-            <div className={styles.cardService}>
-              <div className={styles.headerCardebooks}></div>
-              <div className={styles.cardDescription}>
-                ¡Despierta tu sed de conocimiento y explora nuevos horizontes!
-                Descubre las enseñanzas que nuestros ebooks
-              </div>
-              <div className={styles.explorer}>
-                <p>Ebooks</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
+            <Image className={styles.iconoBanner} src={banner02} alt="bn1" />
           </div>
 
-          <div className={styles.boxServices}>
-            <div className={styles.cardService}>
-              <div className={styles.headerCardolla}></div>
-              <div className={styles.cardDescription}>
-                Estas viajando en tu bicicleta y no sabes donde puedes
-                hospedarte con la seguridad y el mejor acompañamiento posible?
-              </div>
-              <div className={styles.explorer}>
-                <p>Gastronomia</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/guia");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner03} alt="bn1" />
           </div>
 
-          <div className={styles.boxServices}>
-            <div className={styles.cardService}>
-              <div className={styles.headerCardolla}></div>
-              <div className={styles.cardDescription}>
-                Estas viajando en tu bicicleta y no sabes donde puedes
-                hospedarte con la seguridad y el mejor acompañamiento posible?
-              </div>
-              <div className={styles.explorer}>
-                <p>Compra una Cargo</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/shop");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner04} alt="bn1" />
           </div>
 
-          <div className={styles.boxServices}>
-            <div className={styles.cardService}>
-              <div className={styles.headerCardolla}></div>
-              <div className={styles.cardDescription}>
-                Estas viajando en tu bicicleta y no sabes donde puedes
-                hospedarte con la seguridad y el mejor acompañamiento posible?
-              </div>
-              <div className={styles.explorer}>
-                <p>Desarrollo de software</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("https://tripcode.vercel.app/");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner05} alt="bn1" />
           </div>
 
-          <div className={styles.boxServices}>
-            <div className={styles.cardService}>
-              <div className={styles.headerCardolla}></div>
-              <div className={styles.cardDescription}>
-                Estas viajando en tu bicicleta y no sabes donde puedes
-                hospedarte con la seguridad y el mejor acompañamiento posible?
-              </div>
-              <div className={styles.explorer}>
-                <p>Veterinaria</p>
-                <div className={styles.boxIcon}>
-                  <BsArrowRightShort />
-                </div>
-              </div>
-            </div>
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/gastronomia");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner06} alt="bn1" />
+          </div>
+
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner07} alt="bn1" />
+          </div>
+
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/music");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner08} alt="bn1" />
+          </div>
+
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("/community");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner09} alt="bn1" />
+          </div>
+
+          <div
+            className={styles.boxServices}
+            onClick={() => {
+              router.push("https://oskargo.vercel.app/");
+            }}
+          >
+            <Image className={styles.iconoBanner} src={banner10} alt="bn1" />
           </div>
         </div>
 

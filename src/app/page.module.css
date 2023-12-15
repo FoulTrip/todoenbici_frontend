@@ -66,52 +66,27 @@
 .boxServices {
   flex-basis: 200px;
   flex-grow: 1;
-}
-
-.cardService {
-  border-radius: 1em;
-  background: #f4f3f3;
-  padding: 10px;
   cursor: pointer;
-  grid-auto-rows: 6rem;
 }
 
-.cardService:hover {
-  background: #e7e7e7;
+.boxServices:hover {
+  scale: 1.03;
 }
 
-.cardDescription {
+.iconoBanner {
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 5px;
-}
-
-.headerCardmap {
-  width: 100%;
-  height: 10vh;
-  background-image: url("../assets/mapaBanner.jpg");
+  height: auto;
   border-radius: 1em;
 }
 
-.headerCardebooks {
-  width: 100%;
-  height: 10vh;
-  background-image: url("../assets/ebooksCardBanner.jpg");
-  border-radius: 1em;
-}
-
-.headerCardbici {
-  width: 100%;
-  height: 10vh;
-  background-image: url("../assets/biciCardBanner2.jpg");
-  border-radius: 1em;
-}
-
-.headerCardolla {
-  width: 100%;
-  height: 10vh;
-  background-image: url("../assets/ollaCardBanner2.jpg");
-  border-radius: 1em;
+.tituloCard {
+  position: relative;
+  top: -220px;
+  left: 25px;
+  color: #f1f1f1;
+  font-weight: 400;
+  font-size: 25px;
+  
 }
 
 .explorer {
@@ -386,6 +361,11 @@
 .realBtnYtb p {
   font-weight: 200;
   font-size: ;
+}
+
+.realBtnIconBox {
+  display: grid;
+  place-content: center;
 }
 
 @media screen and (max-width: 800px) {
