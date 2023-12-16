@@ -1,33 +1,39 @@
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
 .banner {
-  background-size: contain;
+  position: relative;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   padding-top: 1.3em;
-  /* background: #eaeaea; */
-  /* background: linear-gradient(to bottom, #eaeaea, #ffff); */
+  display: grid;
+  place-content: center;
+  background-image: url("/fondo.jpg");
+  opacity: 0.7;
+  margin-bottom: 3em;
 }
 
 .bannerPhrase {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 90%;
   margin-left: 5%;
-  color: #464646;
-  font-size: 50px;
+  color: #e6d92c;
+  font-size: 120px;
   text-align: center;
-  /* padding: 10px; */
-  /* padding-top: 2em; */
-  /* margin-bottom: 1.3em; */
-}
-
-.slogan {
-  font-size: 5vh;
-  text-align: center;
-  padding: 10px;
-  margin-top: 3em;
-  margin-bottom: 1em;
-  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  z-index: 2;
 }
 
 .subMain {
@@ -46,12 +52,13 @@
 
 .view01 {
   width: 90%;
-  margin-bottom: 8vh;
+  margin-top: 3em;
+  margin-bottom: 3em;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   width: 90%;
   margin-left: 5%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   gap: 2em;
   view-timeline-name: --image;
   view-timeline-axis: block;
@@ -59,7 +66,7 @@
   animation-timeline: --image;
   animation-name: show;
 
-  animation-range: entry 20% cover 50%;
+  animation-range: entry 20% cover 30%;
   animation-fill-mode: both;
 }
 
@@ -79,6 +86,12 @@
   border-radius: 1em;
 }
 
+.iconoBanner:hover {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
 .tituloCard {
   position: relative;
   top: -220px;
@@ -86,7 +99,6 @@
   color: #f1f1f1;
   font-weight: 400;
   font-size: 25px;
-  
 }
 
 .explorer {
@@ -120,7 +132,7 @@
   gap: 1em;
   width: 90%;
   margin-left: 5%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .infoMusicBtn {
@@ -131,7 +143,7 @@
 }
 
 .subInfoMusicBtn {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   cursor: pointer;
   padding: 10px;
   background: #f1f1f1;
@@ -168,13 +180,15 @@
 .biografic {
   width: 90%;
   margin-left: 5%;
+  margin-bottom: 3em;
+  display: grid;
+  place-content: center;
 }
 
 .informationBox {
-  display: grid;
-  /* grid-auto-rows: 8rem; */
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .infoCard {
@@ -194,15 +208,12 @@
 .textInfoCard {
   text-align: center;
   font-size: 1.3vw;
-  font-family: 'Poppins', sans-serif;
-}
-
-@media screen and (min-width: 1024px) {
+  font-family: "Poppins", sans-serif;
 }
 
 @media screen and (max-width: 900px) {
   .bannerPhrase {
-    font-size: 23px;
+    font-size: 50px;
   }
 
   .subInfoMusicBtn p {
@@ -211,18 +222,6 @@
 
   .textInfoCard {
     font-size: 4vw;
-  }
-}
-
-@keyframes show {
-  from {
-    opacity: 0;
-    scale: 25%;
-  }
-
-  to {
-    opacity: 1;
-    scale: 100%;
   }
 }
 
@@ -236,7 +235,7 @@
   view-timeline-axis: block;
   animation-timeline: --image;
   animation-name: show;
-  animation-range: entry 20% cover 50%;
+  animation-range: entry 20% cover 30%;
   animation-fill-mode: both;
   justify-content: space-between;
 }
@@ -265,7 +264,7 @@
 }
 
 .textInfoCEO {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
 
@@ -275,7 +274,7 @@
 
 .subRedBox p {
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 15px;
 }
 
@@ -332,13 +331,13 @@
   text-align: center;
   margin-top: 3em;
   font-size: 30px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .barBtnYoutube {
   display: grid;
   place-content: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 20px;
   /* padding: 10px; */
 }
@@ -352,6 +351,7 @@
   border-radius: 1em;
   cursor: pointer;
   color: #fff;
+  z-index: 2;
 }
 
 .realBtnYtb:hover {
@@ -360,12 +360,36 @@
 
 .realBtnYtb p {
   font-weight: 200;
-  font-size: ;
 }
 
 .realBtnIconBox {
   display: grid;
   place-content: center;
+}
+
+.cubeLogos {
+  display: grid;
+  place-content: center;
+}
+
+.centerLogos {
+  display: flex;
+  flex-direction: row;
+}
+
+.imgLogos {
+  display: grid;
+  place-content: center;
+}
+
+.iconLogo {
+  width: 300px;
+  height: auto;
+}
+
+.services_title {
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 @media screen and (max-width: 800px) {
@@ -384,4 +408,86 @@
     width: 100%;
     height: auto;
   }
+
+  .iconLogo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.Main02 {
+  margin-top: 3em;
+  /* view-timeline-name: --image;
+  view-timeline-axis: block;
+  animation-timeline: --image;
+  animation-name: show;
+  animation-range: entry 20% cover 30%;
+  animation-fill-mode: both;
+  justify-content: space-between; */
+}
+
+.view001 {
+  width: 90%;
+  /* margin-top: 3em; */
+  margin-bottom: 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  width: 90%;
+  margin-left: 5%;
+  font-family: "Poppins", sans-serif;
+  gap: 2em;
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 20% cover 30%;
+  animation-fill-mode: both;
+}
+
+.containerVideo {
+  display: grid;
+  place-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .banner {
+    background-size: cover;
+    background-image: url("/fondo_responsive_2.jpg");
+  }
+
+  .view001 {
+    animation-range: entry 20% cover 13%;
+  }
+}
+
+.bannerInstagram {
+  margin-bottom: 3em;
+  margin-top: 3em;
+}
+
+.btnInstagram {
+  display: grid;
+  place-content: center;
+}
+
+.boxIconRed {
+  display: grid;
+  place-content: center;
+}
+
+.centerBtnInstagram {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  background: #cc6a6a;
+  padding: 10px;
+  border-radius: 1em;
+  cursor: pointer;
+  color: #f1f1f1;
+}
+
+.centerBtnInstagram:hover {
+  scale: 1.01;
 }

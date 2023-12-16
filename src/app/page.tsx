@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "@/components/navBars/NavBar";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useMediaQuery } from "react-responsive";
 
-import { SiYourtraveldottv, SiJusteat } from "react-icons/si";
-import { BsArrowRightShort, BsBicycle } from "react-icons/bs";
 import {
   FaYoutube,
   FaFacebook,
@@ -15,15 +14,12 @@ import {
   FaRoad,
   FaHandsHelping,
 } from "react-icons/fa";
-import { FaCity } from "react-icons/fa6";
-import { BiSolidHomeHeart } from "react-icons/bi";
 import { useRouter } from "next/navigation";
 
-import AutoSliderLeft from "@/components/slider/autoSliderLeft";
-import AutoSliderRight from "@/components/slider/autoSliderRight";
+import { MdDirectionsBike } from "react-icons/md";
+
 import pictureCEO from "@/assets/perfil_CEO.jpg";
 import Footer from "@/components/footer/Footer";
-import AutoSliderSponsor from "@/components/slider/sponsors";
 import Typewriter from "typewriter-effect";
 
 import banner01 from "@/assets/services_img/banner01.jpg";
@@ -33,34 +29,32 @@ import banner04 from "@/assets/services_img/banner04.jpg";
 import banner05 from "@/assets/services_img/banner05.jpg";
 import banner06 from "@/assets/services_img/banner06.jpg";
 import banner07 from "@/assets/services_img/banner07.jpg";
-import banner08 from "@/assets/services_img/banner08.jpg";
-import banner09 from "@/assets/services_img/banner09.jpg";
-import banner10 from "@/assets/services_img/banner10.jpg";
+import oskargo_logo from "@/assets/oscargo_logo.png";
+import tripcode_logo from "@/assets/tripcode_logo.png";
+import juliaca_logo from "@/assets/juliaca_logo.png";
+import VideoComponent from "@/components/video/VideoComponent";
+import AutoSliderLeft from "@/components/slider/autoSliderLeft";
 
 function Home() {
   const router = useRouter();
-  const [textState, setTextState] = useState(false);
+  const isBigScreen = useMediaQuery({ query: "(min-width: 900px)" });
   return (
     <>
       <Navbar />
 
       <main className={styles.banner}>
-        <AutoSliderLeft />
-        {textState == false ? (
+        <div>
           <h2 className={styles.bannerPhrase}>
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
                   .typeString("VUELTA AL MUNDO EN CARGOBIKE")
                   .pauseFor(2000)
-                  .callFunction(() => {
-                    setTextState(true);
-                  })
                   .start();
               }}
             />
           </h2>
-        ) : (
+
           <div className={styles.barBtnYoutube}>
             <div
               className={styles.realBtnYtb}
@@ -74,23 +68,22 @@ function Home() {
               <p>Pedalea conmigo</p>
             </div>
           </div>
-        )}
-        <AutoSliderRight />
+        </div>
       </main>
 
       <main className={styles.biografic}>
         <section className={styles.informationBox}>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <FaRoad className={styles.iconRoad} size={70} />
+              <MdDirectionsBike className={styles.iconRoad} size={70} />
             </div>
             <p className={styles.textInfoCard}>10.000 km recorridos </p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
-              <FaCity className={styles.iconCity} size={70} />
+              <FaRoad className={styles.iconCity} size={70} />
             </div>
-            <p className={styles.textInfoCard}>3 paises recorridos</p>
+            <p className={styles.textInfoCard}>8 Millones de pedaleadas</p>
           </div>
           <div className={styles.infoCard}>
             <div className={styles.infoIcon}>
@@ -98,21 +91,7 @@ function Home() {
             </div>
             <p className={styles.textInfoCard}>67 puntos de apoyo</p>
           </div>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <BsBicycle className={styles.iconBicycle} size={70} />
-            </div>
-            <p className={styles.textInfoCard}>8 millones de pedaleadas</p>
-          </div>
-          <div className={styles.infoCard}>
-            <div className={styles.infoIcon}>
-              <BiSolidHomeHeart className={styles.iconHomeHeart} size={70} />
-            </div>
-            <p className={styles.textInfoCard}>3 casas cicloviajeras</p>
-          </div>
         </section>
-
-        <div></div>
       </main>
 
       <main className={styles.aboutMain}>
@@ -178,8 +157,10 @@ function Home() {
       </main>
 
       <main className={styles.Main02}>
-        <h2 className={styles.slogan}>Descubre y Disfruta</h2>
-        <div className={styles.view01}>
+        {isBigScreen ? (
+          <h1 className={styles.services_title}>Explora y disfuta</h1>
+        ) : null}
+        <div className={styles.view001}>
           <div
             className={styles.boxServices}
             onClick={() => {
@@ -201,7 +182,7 @@ function Home() {
           <div
             className={styles.boxServices}
             onClick={() => {
-              router.push("/guia");
+              router.push("/shop");
             }}
           >
             <Image className={styles.iconoBanner} src={banner03} alt="bn1" />
@@ -219,7 +200,7 @@ function Home() {
           <div
             className={styles.boxServices}
             onClick={() => {
-              router.push("https://tripcode.vercel.app/");
+              router.push("/music");
             }}
           >
             <Image className={styles.iconoBanner} src={banner05} alt="bn1" />
@@ -228,7 +209,7 @@ function Home() {
           <div
             className={styles.boxServices}
             onClick={() => {
-              router.push("/gastronomia");
+              router.push("/cicloviajero");
             }}
           >
             <Image className={styles.iconoBanner} src={banner06} alt="bn1" />
@@ -237,44 +218,69 @@ function Home() {
           <div
             className={styles.boxServices}
             onClick={() => {
-              router.push("/");
+              router.push("/guia");
             }}
           >
             <Image className={styles.iconoBanner} src={banner07} alt="bn1" />
           </div>
+        </div>
+      </main>
 
-          <div
-            className={styles.boxServices}
-            onClick={() => {
-              router.push("/music");
-            }}
-          >
-            <Image className={styles.iconoBanner} src={banner08} alt="bn1" />
-          </div>
+      <section className={styles.containerVideo}>
+        <VideoComponent />
+      </section>
 
-          <div
-            className={styles.boxServices}
-            onClick={() => {
-              router.push("/community");
-            }}
-          >
-            <Image className={styles.iconoBanner} src={banner09} alt="bn1" />
-          </div>
-
-          <div
-            className={styles.boxServices}
-            onClick={() => {
-              router.push("https://oskargo.vercel.app/");
-            }}
-          >
-            <Image className={styles.iconoBanner} src={banner10} alt="bn1" />
+      <main>
+        <p className={styles.textPatro}>Colaboradores</p>
+        <div className={styles.cubeLogos}>
+          <div className={styles.centerLogos}>
+            <div className={styles.imgLogos}>
+              <Image
+                className={styles.iconLogo}
+                src={oskargo_logo}
+                alt="oskargo"
+              />
+            </div>
+            <div className={styles.imgLogos}>
+              <Image
+                className={styles.iconLogo}
+                src={tripcode_logo}
+                alt="oskargo"
+              />
+            </div>
           </div>
         </div>
-
         <p className={styles.textPatro}>Patrocinadores</p>
-        <AutoSliderSponsor />
+        <div className={styles.cubeLogos}>
+          <div className={styles.centerLogos}>
+            <div className={styles.imgLogos}>
+              <Image
+                className={styles.iconLogo}
+                src={juliaca_logo}
+                alt="oskargo"
+              />
+            </div>
+          </div>
+        </div>
       </main>
-      
+
+      <div className={styles.bannerInstagram}>
+        <AutoSliderLeft />
+        <div className={styles.btnInstagram}>
+          <div
+            className={styles.centerBtnInstagram}
+            onClick={() =>
+              router.push("https://www.instagram.com/Todoenbicicleta")
+            }
+          >
+            <div className={styles.boxIconRed}>
+              <FaInstagram />
+            </div>
+            <p>Instagram</p>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </>
   );

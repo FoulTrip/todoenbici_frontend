@@ -47,7 +47,7 @@
   scale: 1.05;
 }
 
-/* .slider::before,
+.slider::before,
 .slider::after {
   background: linear-gradient(
     to right,
@@ -59,7 +59,7 @@
   position: absolute;
   width: 15%;
   z-index: 2;
-} */
+}
 
 .slider::before {
   left: 0;

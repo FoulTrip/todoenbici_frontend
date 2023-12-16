@@ -18,7 +18,7 @@ import { useRouter } from "next/navigation";
 // }
 
 function Navbar() {
-  const router = useRouter()
+  const router = useRouter();
   const responsive = useMediaQuery({ query: "(min-width: 900px)" });
   const [openDropDown, setOpenDropDown] = useState(false);
 
@@ -39,11 +39,11 @@ function Navbar() {
         </div>
         {responsive ? (
           <div className={styles.account}>
-            {/* <div className={styles.subAccount}>
+            <div className={styles.subAccount}>
               <Link href="/blog" className={styles.login}>
-                Blog
+                Equipaje
               </Link>
-            </div> */}
+            </div>
             <div className={styles.subAccount}>
               <Link href="/music" className={styles.login}>
                 Musica
@@ -59,40 +59,84 @@ function Navbar() {
                 Ruta
               </Link>
             </div>
+
+            <div className={styles.subAccount}>
+              <Link href="/ruta" className={styles.login}>
+                Casa del cicloviajero
+              </Link>
+            </div>
           </div>
         ) : (
-          <div className={styles.menuIcon}>
-            <AiOutlineMenu size={20} onClick={handlerDropDown} />
+          <div className={openDropDown ? styles.menuIconClose : styles.menuIcon}>
+            {openDropDown ? null : (
+              <AiOutlineMenu size={20} className={openDropDown} onClick={handlerDropDown} />
+            )}
             {openDropDown ? (
               <ul className={styles.dropdown}>
                 <div className={styles.boxBtnClose}>
-                  <IoMdCloseCircle size={25} onClick={handlerDropDown} className={styles.iconCloseDrop} />
+                  <IoMdCloseCircle
+                    size={25}
+                    onClick={handlerDropDown}
+                    className={styles.iconCloseDrop}
+                  />
                 </div>
-                <li className={styles.dropdown_list} onClick={() => router.push("/")}>
+                <li
+                  className={styles.dropdown_list}
+                  onClick={() => router.push("/")}
+                >
                   <div className={styles.dropdown_link}>
                     <AiFillHome />
                     <span className={styles.dropdown_span}>Inicio</span>
                   </div>
                 </li>
 
-                <li className={styles.dropdown_list} onClick={() => router.push("/music")}>
+                <li
+                  className={styles.dropdown_list}
+                  onClick={() => router.push("/music")}
+                >
                   <div className={styles.dropdown_link}>
                     <IoIosMusicalNotes />
                     <span className={styles.dropdown_span}>Musica</span>
                   </div>
                 </li>
 
-                <li className={styles.dropdown_list} onClick={() => router.push("/shop")}>
+                <li
+                  className={styles.dropdown_list}
+                  onClick={() => router.push("/shop")}
+                >
                   <div className={styles.dropdown_link}>
                     <MdOutlineLocalGroceryStore />
                     <span className={styles.dropdown_span}>Tienda</span>
                   </div>
                 </li>
 
-                <li className={styles.dropdown_list} onClick={() => router.push("/ruta")}>
+                <li
+                  className={styles.dropdown_list}
+                  onClick={() => router.push("/ruta")}
+                >
                   <div className={styles.dropdown_link}>
                     <FaMap />
                     <span className={styles.dropdown_span}>Ruta</span>
+                  </div>
+                </li>
+
+                <li
+                  className={styles.dropdown_list}
+                  onClick={() => router.push("/ruta")}
+                >
+                  <div className={styles.dropdown_link}>
+                    <FaMap />
+                    <span className={styles.dropdown_span}>Equipaje</span>
+                  </div>
+                </li>
+
+                <li
+                  className={styles.dropdown_list}
+                  onClick={() => router.push("/ruta")}
+                >
+                  <div className={styles.dropdown_link}>
+                    <FaMap />
+                    <span className={styles.dropdown_span}>Casa del cicloviajero</span>
                   </div>
                 </li>
               </ul>
