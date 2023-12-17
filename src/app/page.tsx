@@ -185,25 +185,7 @@ function Home() {
               router.push("/shop");
             }}
           >
-            <Image className={styles.iconoBanner} src={banner03} alt="bn1" />
-          </div>
-
-          <div
-            className={styles.boxServices}
-            onClick={() => {
-              router.push("/shop");
-            }}
-          >
             <Image className={styles.iconoBanner} src={banner04} alt="bn1" />
-          </div>
-
-          <div
-            className={styles.boxServices}
-            onClick={() => {
-              router.push("/music");
-            }}
-          >
-            <Image className={styles.iconoBanner} src={banner05} alt="bn1" />
           </div>
 
           <div

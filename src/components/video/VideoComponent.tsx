@@ -21,7 +21,7 @@ const VideoComponent: React.FC = () => {
         }
       },
       {
-        threshold: 0.5, // El video se reproducirá cuando el 50% de él esté visible
+        threshold: 0.1, // El video se reproducirá cuando el 50% de él esté visible
       }
     );
 
@@ -36,7 +36,7 @@ const VideoComponent: React.FC = () => {
 
   return (
     <div className={styles.videoContainer}>
-      <video className={styles.video} ref={videoRef} src="/video001.mp4" />
+      <video className={styles.video} ref={videoRef} src="/video001.webm" playsInline />
       <button
         className={styles.playButton}
         onClick={() => router.push("https://www.youtube.com/@TodoenBicicleta")}

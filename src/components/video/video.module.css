@@ -8,10 +8,12 @@
 .videoContainer {
   position: relative;
   width: 100%;
+  display: grid;
+  place-content: center;
 }
 
 .video {
-  width: 100%;
+  width: 700px;
   height: auto;
 }
 
@@ -25,11 +27,18 @@
   color: #fff;
   border: none;
   cursor: pointer;
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   border-radius: 1em;
   font-size: 20px;
 }
 
 .playButton:hover {
   scale: 1.05;
+}
+
+@media screen and (max-width: 800px) {
+  .video {
+    width: 100%;
+    height: auto;
+  }
 }
