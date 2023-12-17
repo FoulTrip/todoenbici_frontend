@@ -15,6 +15,7 @@
 .video {
   width: 700px;
   height: auto;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .playButton {
@@ -30,6 +31,7 @@
   font-family: "Pacifico", cursive;
   border-radius: 1em;
   font-size: 20px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .playButton:hover {

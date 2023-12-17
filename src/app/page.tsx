@@ -48,7 +48,9 @@ function Home() {
             <Typewriter
               onInit={(typewriter) => {
                 typewriter
-                  .typeString("VUELTA AL MUNDO EN CARGOBIKE")
+                  .typeString(
+                    "<span style=\"font-family: 'Alfa Slab One', serif;\">VUELTA AL MUNDO EN CARGOBIKE</span>"
+                  )
                   .pauseFor(2000)
                   .start();
               }}
@@ -206,13 +208,7 @@ function Home() {
             <Image className={styles.iconoBanner} src={banner07} alt="bn1" />
           </div>
         </div>
-      </main>
 
-      <section className={styles.containerVideo}>
-        <VideoComponent />
-      </section>
-
-      <main>
         <p className={styles.textPatro}>Colaboradores</p>
         <div className={styles.cubeLogos}>
           <div className={styles.centerLogos}>
@@ -232,6 +228,13 @@ function Home() {
             </div>
           </div>
         </div>
+      </main>
+
+      <section className={styles.containerVideo}>
+        <VideoComponent />
+      </section>
+
+      <main className={styles.boxPatrocinadores}>
         <p className={styles.textPatro}>Patrocinadores</p>
         <div className={styles.cubeLogos}>
           <div className={styles.centerLogos}>
@@ -256,9 +259,9 @@ function Home() {
             }
           >
             <div className={styles.boxIconRed}>
-              <FaInstagram />
+              <FaInstagram size={40}/>
             </div>
-            <p>Instagram</p>
+            <p className={styles.textInstagramBtn}>Visita mi instagram</p>
           </div>
         </div>
       </div>

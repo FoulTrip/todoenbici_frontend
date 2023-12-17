@@ -33,9 +33,9 @@ function Navbar() {
           <div className={styles.imageLogo}>
             <Image className={styles.iconLogo} src={iconLogo} alt="iconLogo" />
           </div>
-          <Link href="/" className={styles.logoTitle}>
+          <div onClick={() => router.push("/")}  className={styles.logoTitle}>
             Todo en bicicleta
-          </Link>
+          </div>
         </div>
         {responsive ? (
           <div className={styles.account}>

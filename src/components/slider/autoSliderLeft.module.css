@@ -12,6 +12,7 @@
   display: flex;
   width: calc(280px * 18);
   animation: scroll 40s linear infinite;
+
 }
 
 /* .slide_track:hover {
@@ -41,13 +42,14 @@
   transition: transform 1s;
   border-radius: 1em;
   cursor: pointer;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .img:hover {
   scale: 1.05;
 }
 
-.slider::before,
+/* .slider::before,
 .slider::after {
   background: linear-gradient(
     to right,
@@ -59,7 +61,7 @@
   position: absolute;
   width: 15%;
   z-index: 2;
-}
+} */
 
 .slider::before {
   left: 0;
