@@ -15,6 +15,7 @@ FROM node:18-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
+ENV DOMAIN todoenbici.org
 
 RUN addgroup -g 1001 -S node.js
 RUN adduser -S nextjs -u 1001
@@ -31,8 +32,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
-EXPOSE 4200
+EXPOSE 80
 
-ENV PORT 4200
+ENV PORT 80
 
 CMD ["node", "server.js"]
