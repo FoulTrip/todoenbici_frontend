@@ -5,6 +5,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./styles.module.css";
 import Navbar from "@/components/navBars/NavBar";
+import InfoMap from "@/components/maps/InfoMap";
+
+import { IoChevronDown } from "react-icons/io5";
+import OldMapComponent from "@/components/maps/mapOld";
 
 interface Coordinates {
   latitude: number;
@@ -14,6 +18,11 @@ interface Coordinates {
 function RutaPage() {
   const [coordinates, setCoordinates] = useState<Coordinates[]>([]);
   const [mapLoaded, setMapLoaded] = useState<boolean>(false);
+  const [openChevron, setOpenChevron] = useState<boolean>(false);
+
+  const handleChangeChevron = () => {
+    setOpenChevron(!openChevron);
+  };
 
   useEffect(() => {
     const fetchCoordinates = async () => {
@@ -41,8 +50,28 @@ function RutaPage() {
           {mapLoaded == true ? (
             <>
               <div className={styles.mapBox}>
-                <p>Proximamente...</p>
+                <div className={styles.mapContainer}>
+                  <MapComponent />
+                </div>
+                <div className={styles.mapContainer}>
+                  <InfoMap />
+                </div>
               </div>
+              <div className={styles.btnMoreTravel} onClick={handleChangeChevron}>
+                <div className={styles.centerBtnMore}>
+                  <p>Mi anterior viaje</p>
+                  <div
+                    className={styles.chvronBox}
+                  >
+                    <IoChevronDown />
+                  </div>
+                </div>
+              </div>
+              {openChevron ? (
+                <>
+                  <OldMapComponent />
+                </>
+              ) : null}
             </>
           ) : null}
           {!mapLoaded && <p>Cargando mapa...</p>}

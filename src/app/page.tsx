@@ -49,7 +49,7 @@ function Home() {
               onInit={(typewriter) => {
                 typewriter
                   .typeString(
-                    "<span style=\"font-family: 'Alfa Slab One', serif;\">VUELTA AL MUNDO EN CARGOBIKE</span>"
+                    "<span style=\"font-family: 'Mulish', sans-serif;\">VUELTA AL MUNDO EN CARGOBIKE</span>"
                   )
                   .pauseFor(2000)
                   .start();

@@ -7,6 +7,7 @@ import Image from "next/image";
 
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiShoppingCart } from "react-icons/ci";
+import { useAuth } from "../Stream/context/useSession";
 
 interface productProps {
   id: string;
@@ -23,6 +24,7 @@ interface ListProducts {
 
 const ProductsCard = () => {
   const [count, setCount] = useState(0);
+  const { user } = useAuth();
 
   const addCart = () => {
     setCount(count + 1);
@@ -35,6 +37,15 @@ const ProductsCard = () => {
           <h1>Tienda</h1>
         </div>
         <div className={styles.widget}>
+          <div className={styles.boxAccount}>
+            {user ? (
+              <>
+              <div className={styles.boxImageUser}>
+                
+              </div>
+              </>
+            ) : null}
+          </div>
           <div className={styles.cartStore}>
             <CiShoppingCart className={styles.iconWidget} size={25} />
             {count == 0 ? null : <p className={styles.count}>{count}</p>}

@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 import iconLogo from "@/assets/logo_page.png";
 import { AiOutlineMenu, AiFillHome } from "react-icons/ai";
 import { IoMdCloseCircle, IoIosMusicalNotes } from "react-icons/io";
-import { FaMap } from "react-icons/fa";
+import { FaMap, FaBicycle, FaBed } from "react-icons/fa";
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -33,47 +33,55 @@ function Navbar() {
           <div className={styles.imageLogo}>
             <Image className={styles.iconLogo} src={iconLogo} alt="iconLogo" />
           </div>
-          <div onClick={() => router.push("/")}  className={styles.logoTitle}>
+          <div onClick={() => router.push("/")} className={styles.logoTitle}>
             Todo en bicicleta
           </div>
         </div>
         {responsive ? (
           <div className={styles.account}>
             <div className={styles.subAccount}>
-              <Link href="/blog" className={styles.login}>
+              <Link href={"/blog"} className={styles.login}>
                 Equipaje
               </Link>
             </div>
             <div className={styles.subAccount}>
-              <Link href="/music" className={styles.login}>
+              <Link href={"/music"} className={styles.login}>
                 Musica
               </Link>
             </div>
             <div className={styles.subAccount}>
-              <Link href="/shop" className={styles.login}>
-                Tienda
-              </Link>
-            </div>
-            <div className={styles.subAccount}>
-              <Link href="/ruta" className={styles.login}>
+              <Link href={"/ruta"} className={styles.login}>
                 Ruta
               </Link>
             </div>
 
             <div className={styles.subAccount}>
-              <Link href="/ruta" className={styles.login}>
-                Casa del cicloviajero
+              <Link href={"/cicloviajero"} className={styles.login}>
+                Cicloviajero
+              </Link>
+            </div>
+
+            <div className={styles.subAccount}>
+              <Link href={"/community"} className={styles.login}>
+                Comunidad
               </Link>
             </div>
           </div>
         ) : (
-          <div className={openDropDown ? styles.menuIconClose : styles.menuIcon}>
+          <div
+            className={openDropDown ? styles.menuIconClose : styles.menuIcon}
+          >
             {openDropDown ? null : (
-              <AiOutlineMenu size={20} className={openDropDown} onClick={handlerDropDown} />
+              <AiOutlineMenu
+                size={20}
+                className={openDropDown}
+                onClick={handlerDropDown}
+              />
             )}
             {openDropDown ? (
               <ul className={styles.dropdown}>
                 <div className={styles.boxBtnClose}>
+                  <p>Todo en bici</p>
                   <IoMdCloseCircle
                     size={25}
                     onClick={handlerDropDown}
@@ -102,16 +110,6 @@ function Navbar() {
 
                 <li
                   className={styles.dropdown_list}
-                  onClick={() => router.push("/shop")}
-                >
-                  <div className={styles.dropdown_link}>
-                    <MdOutlineLocalGroceryStore />
-                    <span className={styles.dropdown_span}>Tienda</span>
-                  </div>
-                </li>
-
-                <li
-                  className={styles.dropdown_list}
                   onClick={() => router.push("/ruta")}
                 >
                   <div className={styles.dropdown_link}>
@@ -125,7 +123,7 @@ function Navbar() {
                   onClick={() => router.push("/ruta")}
                 >
                   <div className={styles.dropdown_link}>
-                    <FaMap />
+                    <FaBicycle />
                     <span className={styles.dropdown_span}>Equipaje</span>
                   </div>
                 </li>
@@ -135,8 +133,10 @@ function Navbar() {
                   onClick={() => router.push("/ruta")}
                 >
                   <div className={styles.dropdown_link}>
-                    <FaMap />
-                    <span className={styles.dropdown_span}>Casa del cicloviajero</span>
+                    <FaBed />
+                    <span className={styles.dropdown_span}>
+                      Casa del cicloviajero
+                    </span>
                   </div>
                 </li>
               </ul>

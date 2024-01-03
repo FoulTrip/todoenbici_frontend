@@ -506,15 +506,16 @@
   border-radius: 1em;
   cursor: pointer;
   color: #f1f1f1;
+  background: #dd4141;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .centerBtnInstagram:hover {
-  background: #d53838;
-  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-  transition: background 1s;
+  scale: 1.02;
+  transition: scale .3s;
 }
 
 .textInstagramBtn {
   font-size: 30px;
-  font-family: 'Pacifico', cursive; 
+  font-family: 'Pacifico', cursive;
 }

@@ -60,17 +60,19 @@
 }
 
 .login {
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
   margin: 0;
   text-decoration: none;
   color: #5d5d5d;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 1em;
   font-family: "Poppins", sans-serif;
+  display: grid;
+  place-content: center;
 }
 
 .login:hover {
-  background: rgb(160, 160, 160);
+  background: #cacaca;
   color: #ffff;
 }
 
@@ -96,7 +98,7 @@
   font-family: "Poppins", sans-serif;
   position: absolute;
   max-width: 300px;
-  height: 440px;
+  height: 380px;
   background-color: #a9a9a9;
   border-radius: 1em;
   padding: 10px;
@@ -107,6 +109,7 @@
   display: grid;
   align-content: center;
   gap: .6rem;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .dropdown_list {
@@ -114,8 +117,14 @@
 }
 
 .dropdown_list:hover {
-  background: #5d5d5d;
-  border-radius: 10px;
+  background: #c3c3c3;
+  border-radius: 1em;
+  cursor: pointer;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown_link:hover, .dropdown_link {
+  color: #6e6e6e;
 }
 
 .dropdown_link {
@@ -131,8 +140,12 @@
   color: #ffffff;
 }
 
+.iconCloseDrop:hover {
+  color: gray;
+}
+
 .boxBtnClose {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   cursor: pointer;
 }
