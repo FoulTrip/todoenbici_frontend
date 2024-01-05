@@ -24,8 +24,12 @@ interface cordenatesProps {
   state: string;
 }
 
+interface Data {
+  lastCordenate: cordenatesProps;
+}
+
 function MapComponent() {
-  const { data } = useSuspenseQuery(LAST_CORDENATES);
+  const { data } = useSuspenseQuery<Data>(LAST_CORDENATES);
   const location: cordenatesProps = data.lastCordenate;
   const containerStyle = {
     width: "100%",
@@ -107,7 +111,7 @@ function MapComponent() {
     { lat: location.latitude, lng: location.longitude },
   ]);
 
-  const onLoad = useCallback(function callback(map) {
+  const onLoad = useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds();
     markers.forEach((location) => {
       bounds.extend(location);
@@ -117,7 +121,7 @@ function MapComponent() {
     setMap(map);
   }, []);
 
-  const onUnmount = useCallback(function callback(map) {
+  const onUnmount = useCallback(function callback(_map: any) {
     setMap(null);
   }, []);
 

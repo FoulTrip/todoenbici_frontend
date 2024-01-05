@@ -12,6 +12,7 @@ import { CiCalendarDate } from "react-icons/ci";
 import imgBitacora from "@/assets/bitacora_img_preview.jpg";
 
 import styles from "./infoMap.module.css";
+import Image from "next/image";
 
 interface cordenatesProps {
   id: string;
@@ -22,8 +23,12 @@ interface cordenatesProps {
   state: string;
 }
 
+interface Data {
+  lastCordenate: cordenatesProps;
+}
+
 function InfoMap() {
-  const { data } = useSuspenseQuery(LAST_CORDENATES);
+  const { data } = useSuspenseQuery<Data>(LAST_CORDENATES);
 
   useEffect(() => {
     data;
@@ -74,7 +79,7 @@ function InfoMap() {
       <div className={styles.bitacoraContainer}>
         <div className={styles.cardBitacora}>
           <div className={styles.boxImage}>
-            <img
+            <Image
               className={styles.imgBitacora}
               src={imgBitacora.src}
               alt="botacora"
@@ -107,7 +112,7 @@ function InfoMap() {
 
         <div className={styles.cardBitacora}>
           <div className={styles.boxImage}>
-            <img
+            <Image
               className={styles.imgBitacora}
               src={imgBitacora.src}
               alt="botacora"
@@ -140,7 +145,7 @@ function InfoMap() {
 
         <div className={styles.cardBitacora}>
           <div className={styles.boxImage}>
-            <img
+            <Image
               className={styles.imgBitacora}
               src={imgBitacora.src}
               alt="botacora"

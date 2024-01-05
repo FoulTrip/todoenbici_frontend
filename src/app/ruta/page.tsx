@@ -8,7 +8,6 @@ import Navbar from "@/components/navBars/NavBar";
 import InfoMap from "@/components/maps/InfoMap";
 
 import { IoChevronDown } from "react-icons/io5";
-import OldMapComponent from "@/components/maps/mapOld";
 
 interface Coordinates {
   latitude: number;
@@ -67,11 +66,6 @@ function RutaPage() {
                   </div>
                 </div>
               </div>
-              {openChevron ? (
-                <>
-                  <OldMapComponent />
-                </>
-              ) : null}
             </>
           ) : null}
           {!mapLoaded && <p>Cargando mapa...</p>}
